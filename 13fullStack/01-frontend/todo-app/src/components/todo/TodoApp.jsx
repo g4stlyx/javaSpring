@@ -5,6 +5,7 @@ import TodoList from "./TodoList";
 import Footer from "./Footer";
 import Header from "./Header";
 import Logout from "./Logout";
+import Todo from "./Todo";
 import "../../styles/todoApp.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./security/AuthContext";
@@ -36,6 +37,14 @@ export default function TodoApp() {
           element={
             <AuthenticatedRoute>
               <TodoList />
+            </AuthenticatedRoute>
+          }
+        />
+        <Route
+          path="/todos/:id"
+          element={
+            <AuthenticatedRoute>
+              <Todo />
             </AuthenticatedRoute>
           }
         />

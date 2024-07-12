@@ -1,8 +1,11 @@
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { useAuth } from "./security/AuthContext";
+import { useState } from "react";
 
 export default function Welcome(){
     const {username} = useParams();
+    const authContext = useAuth();
+    const [message, setMessage] = useState(null)
     
     return(
         <div className="Welcome">
